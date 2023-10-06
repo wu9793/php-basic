@@ -23,4 +23,7 @@ while($i<=100){
     echo $sum . " + ". $i."=";
     echo $sum+$i;
     echo "<br>";
+
+    $sum+$i;
+    $i++;
 }
