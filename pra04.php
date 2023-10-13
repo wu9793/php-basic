@@ -104,3 +104,26 @@ echo "<br>";
 ?>
 
 
+<h2>菱形</h2>
+<?php
+
+for($i=0;$i<9;$i++){ 
+
+    if($i<=4){
+        $temp=$i;
+    }else{
+        $temp--;
+    }
+
+    for($j=0;$j<(4-$temp);$j++){ 
+        echo "&nbsp;";
+    }    
+    for($k=0;$k<($temp*2+1);$k++){
+          echo "*";  
+    }
+   
+    echo "<br>";
+}
+
+
+?>
