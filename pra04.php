@@ -42,7 +42,9 @@ $i  $j
 4   5
  */
 
-for($i=0;$i<5;$i++){
+$amount=10;
+
+ for($i=0;$i<$amount;$i++){
     for($j=0;$j<=$i;$j++){
     echo "*";
 }
@@ -55,7 +57,7 @@ echo "<br>";
 <h2>倒直角三角形</h2>
 
 <?php
-for($i=4;$i>=0;$i--){ //行列數
+for($i=$amount-1;$i>=0;$i--){ //行列數
     for($j=0;$j<=$i;$j++){
     echo "*"; //內圈印星星，跟顆數無關
 }
@@ -66,14 +68,16 @@ echo "<br>";
 <style>
     *{
         font-family: 'Courier New', Courier, monospace;
-        line-height: 10px;
+        /* line-height: 10px; */
+        
     }
+
 </style>
 
 <h2>正三角形</h2>
 <?php
-for($i=0;$i<5;$i++){ //行列數
-    for($j=0;$j<(4-$i);$j++){ //內圈印空格數
+for($i=0;$i<$amount;$i++){ //行列數
+    for($j=0;$j<($amount-1-$i);$j++){ //內圈印空格數
         echo "&nbsp;";
     }    
     for($k=0;$k<($i*2+1);$k++){ //內圈印星星
@@ -90,8 +94,8 @@ echo "<br>";
 
 <h2>倒正三角形</h2>
 <?php
-for($i=4;$i>=0;$i--){ 
-    for($j=0;$j<(4-$i);$j++){
+for($i=$amount-1;$i>=0;$i--){ 
+    for($j=0;$j<($amount-1-$i);$j++){
         echo "&nbsp;";
     }    
     for($k=0;$k<($i*2+1);$k++){
@@ -107,16 +111,16 @@ echo "<br>";
 
 <h2>菱形</h2>
 <?php
+$mid=floor(($amount*2-1)/2);
+for($i=0;$i<($amount*2-1);$i++){ 
 
-for($i=0;$i<9;$i++){ 
-
-    if($i<=4){
+    if($i<=$mid){
         $temp=$i;
     }else{
         $temp--;
     }
 
-    for($j=0;$j<(4-$temp);$j++){ 
+    for($j=0;$j<($mid-$temp);$j++){ 
         echo "&nbsp;";
     }    
     for($k=0;$k<($temp*2+1);$k++){
@@ -132,12 +136,12 @@ for($i=0;$i<9;$i++){
 <h2>矩形</h2>
 <?php
 
-for($i=0;$i<7;$i++){
+for($i=0;$i<$amount;$i++){
 
-    for($j=0;$j<7;$j++){
-        if($i==0 || $i==6){
+    for($j=0;$j<$amount;$j++){
+        if($i==0 || $i==($amount-1)){
         echo "*";
-        }else if($j==0 || $j==6){
+        }else if($j==0 || $j==($amount-1)){
             echo "*";
         }else{
             echo "&nbsp;";
@@ -152,12 +156,15 @@ for($i=0;$i<7;$i++){
 <h2>變形矩形</h2>
 <?php
 
-for($i=0;$i<7;$i++){
+for($i=0;$i<$amount;$i++){
 
-    for($j=0;$j<7;$j++){
-        if($i==0 || $i==6 || $i==$j || $i+$j==6){
+    for($j=0;$j<$amount;$j++){
+        if($i==0 || $i==($amount-1)){
         echo "*";
-        }else if($j==0 || $j==6){
+        }else if($i==$j || $i+$j==($amount-1)){
+            echo "<span style='color:red'>*</span>";
+        }
+        else if($j==0 || $j==($amount-1)){
             echo "*";
         }else{
             echo "&nbsp;";
