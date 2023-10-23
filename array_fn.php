@@ -1,5 +1,7 @@
 <?php
+
 $array=[3,4,6,10,30,23];
+
 
 
 // $score=[
@@ -7,19 +9,11 @@ $array=[3,4,6,10,30,23];
 //     '成績'=>98
 // ];
 
-
-
-
-
-
-
 // $tmp=array_keys($array);
 // $string=array_keys($score);
 // echo "<pre>";
 // print_r($string);
 // echo "</pre>";
-
-
 
 
 // echo in_array(23,$array);
