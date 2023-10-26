@@ -29,12 +29,21 @@
     echo "<h3>";
     echo date('西元Y年m月');
     echo "</h3>";
+    // 取得當前年份
     $thisMonth = date("Y");
+    // 取得當前月份的第一天
     $thisFirstDay = date("Y-m-1");
+    // 取得當前月份的第一天是在星期幾（0為星期日，1為星期一，以此類推）
+    // w 代表星期幾 0是星期日~6是星期六
     $thisFirstDate = date('w', strtotime($thisFirstDay));
+    // 取得當前月份的總天數
+    // t 代表總天數 28~31天
     $thisMonthDays = date('t');
+    // 取得當前月份的最後一天
     $thisLastDay = date("Y-m-$thisMonthDays");
+    // 計算本月需要多少周來顯示
     $weeks = ceil(($thisMonthDays + $thisFirstDate) / 7);
+    // 計算這個月第一個單元格是從什麼日期開始
     $firstCell = date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
     echo $firstCell;
     echo "<table>";
@@ -47,16 +56,22 @@
     echo "<td>五</td>";
     echo "<td>六</td>";
     echo "</tr>";
+    // 迴圈生成表格的行
     for ($i = 0; $i < $weeks; $i++) {
         echo "<tr>";
+        // 迴圈生成表格的列
         for ($j = 0; $j < 7; $j++) {
             $addDays = 7 * $i + $j;
             $thisCellDate = strtotime("+$addDays days", strtotime($firstCell));
+            
+            // 判斷是否為週末，若是則添加灰色背景
             if (date('w', $thisCellDate) == 0 || date('w', $thisCellDate) == 6) {
                 echo "<td style='background-color:#ccc'>";
             } else {
                 echo "<td>";
             }
+            
+            // 判斷日期是否屬於當前月份，是則顯示日期
             if (date("m", $thisCellDate) == date("m", strtotime($thisFirstDay))) {
                 echo date("Y-m-d", $thisCellDate);
             }
