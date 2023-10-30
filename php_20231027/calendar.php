@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>萬年曆</title>
     <style>
         h3 {
             text-align: center;
@@ -81,8 +81,8 @@
         $prev=$month-1;
     }
     ?>
-        <a href="?year=<?=$prevYear;?>&?month=<?=$prev;?>">上一個月</a>
-        <a href="?year=<?=$nextYear;?>&?month=<?=$next;?>">下一個月</a>
+        <a href="?year=<?=$prevYear;?>&month=<?=$prev;?>">上一個月</a>
+        <a href="?year=<?=$nextYear;?>&month=<?=$next;?>">下一個月</a>
     </div>
 
     <table>
