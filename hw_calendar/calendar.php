@@ -19,7 +19,7 @@
         }
 
         table {
-            width: 50vw;
+            width: 30vw;
             height: 30vh;
             /* display: block; */
             margin: auto;
@@ -39,6 +39,14 @@
             bottom: 0;
             /* display: inline-block; */
             text-align: center;
+        }
+        .calendar{
+            float: right;
+            width: 60%;
+        }
+        .title{
+            float: left;
+            width: 40%;
         }
     </style>
 </head>
